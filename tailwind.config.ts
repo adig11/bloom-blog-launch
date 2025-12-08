@@ -7,15 +7,16 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1.5rem",
       screens: {
-        "2xl": "1000px",
+        "2xl": "1200px",
       },
     },
     extend: {
       fontFamily: {
-        sans: ["DM Sans", "system-ui", "sans-serif"],
-        serif: ["Playfair Display", "Georgia", "serif"],
+        sans: ["Inter", "system-ui", "sans-serif"],
+        serif: ["Libre Baskerville", "Georgia", "serif"],
+        mono: ["JetBrains Mono", "Menlo", "monospace"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -61,17 +62,37 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        avatar: {
-          border: "hsl(var(--avatar-border))",
+        text: {
+          body: "hsl(var(--text-body))",
+          meta: "hsl(var(--text-meta))",
+          headline: "hsl(var(--text-headline))",
         },
-        link: {
-          hover: "hsl(var(--link-hover))",
+        surface: {
+          raised: "hsl(var(--surface-raised))",
+          sunken: "hsl(var(--surface-sunken))",
+        },
+        callout: {
+          insight: "hsl(var(--callout-insight))",
+          warning: "hsl(var(--callout-warning))",
+          quote: "hsl(var(--callout-quote))",
+        },
+        chart: {
+          "1": "hsl(var(--chart-1))",
+          "2": "hsl(var(--chart-2))",
+          "3": "hsl(var(--chart-3))",
+          "4": "hsl(var(--chart-4))",
+          "5": "hsl(var(--chart-5))",
         },
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      maxWidth: {
+        content: "680px",
+        wide: "900px",
+        full: "1200px",
       },
       keyframes: {
         "accordion-down": {
