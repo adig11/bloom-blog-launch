@@ -10,6 +10,7 @@ import SeriesIndex from "./pages/SeriesIndex";
 import Series from "./pages/Series";
 import About from "./pages/About";
 import Subscribe from "./pages/Subscribe";
+import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/series/:slug" element={<Series />} />
           <Route path="/about" element={<About />} />
           <Route path="/subscribe" element={<Subscribe />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
