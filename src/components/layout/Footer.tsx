@@ -6,11 +6,11 @@ export const Footer = () => {
       <div className="container py-12 md:py-16">
         <div className="grid gap-8 md:grid-cols-4">
           <div className="md:col-span-2">
-            <Link to="/" className="font-serif text-xl font-bold text-text-headline">
+            <Link to="/" className="font-poppins text-xl font-bold text-text-headline">
               thepaperfounder
             </Link>
             <p className="mt-4 max-w-md text-sm text-text-meta">
-              Deep analytical essays on startups, systems, markets, and ideas. 
+              A personal lens on startups, systems, markets, and ideas. 
               For founders, operators, and curious generalists.
             </p>
           </div>
@@ -22,9 +22,6 @@ export const Footer = () => {
             <nav className="flex flex-col gap-2">
               <Link to="/articles" className="text-sm text-text-meta hover:text-primary transition-colors">
                 All Articles
-              </Link>
-              <Link to="/series/zero-to-one" className="text-sm text-text-meta hover:text-primary transition-colors">
-                0 → 1
               </Link>
               <Link to="/series/graph-of-the-week" className="text-sm text-text-meta hover:text-primary transition-colors">
                 Graph of the Week
