@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { ArticleCard } from "@/components/ArticleCard";
 import { NewsletterForm } from "@/components/NewsletterForm";
+import { GraphOfTheWeekChart } from "@/components/GraphOfTheWeekChart";
 import { getFeaturedArticle, getLatestArticles, getArticlesForSeries } from "@/lib/articles";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -72,7 +73,12 @@ const Index = () => {
                   View all <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
-              <ArticleCard article={graphOfTheWeek[0]} />
+              <div className="grid lg:grid-cols-2 gap-8 items-start">
+                <div>
+                  <ArticleCard article={graphOfTheWeek[0]} />
+                </div>
+                <GraphOfTheWeekChart />
+              </div>
             </div>
           </section>
         </ScrollReveal>

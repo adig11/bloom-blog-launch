@@ -17,6 +17,7 @@ export default {
         sans: ["Inter", "system-ui", "sans-serif"],
         serif: ["Libre Baskerville", "Georgia", "serif"],
         mono: ["JetBrains Mono", "Menlo", "monospace"],
+        poppins: ["Poppins", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

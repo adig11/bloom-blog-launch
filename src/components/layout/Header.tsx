@@ -2,10 +2,10 @@ import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/articles", label: "Articles" },
-  { href: "/series", label: "Series" },
-  { href: "/about", label: "About" },
+  { href: "/", label: "Home", external: false },
+  { href: "/articles", label: "Articles", external: false },
+  { href: "/series/graph-of-the-week", label: "Graph of the Week", external: false },
+  { href: "https://adig-portfolio.netlify.app/", label: "About", external: true },
 ];
 
 export const Header = () => {
@@ -16,25 +16,37 @@ export const Header = () => {
       <div className="container flex h-16 items-center justify-between">
         <Link 
           to="/" 
-          className="font-serif text-xl font-bold tracking-tight text-text-headline transition-colors hover:text-primary"
+          className="font-poppins text-xl font-bold tracking-tight text-text-headline transition-colors hover:text-primary"
         >
           thepaperfounder
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
-            <Link
-              key={item.href}
-              to={item.href}
-              className={cn(
-                "text-sm font-medium transition-colors hover:text-primary",
-                location.pathname === item.href
-                  ? "text-text-headline"
-                  : "text-text-meta"
-              )}
-            >
-              {item.label}
-            </Link>
+            item.external ? (
+              <a
+                key={item.href}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium transition-colors hover:text-primary text-text-meta"
+              >
+                {item.label}
+              </a>
+            ) : (
+              <Link
+                key={item.href}
+                to={item.href}
+                className={cn(
+                  "text-sm font-medium transition-colors hover:text-primary",
+                  location.pathname === item.href
+                    ? "text-text-headline"
+                    : "text-text-meta"
+                )}
+              >
+                {item.label}
+              </Link>
+            )
           ))}
         </nav>
 
