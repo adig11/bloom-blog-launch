@@ -176,22 +176,10 @@ Boring is a feature, not a bug.
 
 export const series: Series[] = [
   {
-    slug: "zero-to-one",
-    title: "0 → 1",
-    description: "Essays on the journey from idea to product-market fit. The hardest phase of building, examined honestly.",
-    articles: ["the-founders-paradox", "why-most-markets-are-smaller-than-you-think"],
-  },
-  {
     slug: "graph-of-the-week",
     title: "Graph of the Week",
     description: "One chart. One insight. Every week I dig into data that reveals something unexpected about markets, companies, or trends.",
     articles: ["graph-of-the-week-saas-net-retention"],
-  },
-  {
-    slug: "founder-whiteboard",
-    title: "Founder Whiteboard",
-    description: "Tactical frameworks for the decisions founders face. Pricing, hiring, positioning—explained with examples.",
-    articles: [],
   },
 ];
 
