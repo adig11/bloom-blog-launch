@@ -59,13 +59,27 @@ const Sphere = ({ isHovered }: { isHovered: boolean }) => {
   });
 
   return (
-    <mesh ref={meshRef} scale={1.1} rotation={[80 * (Math.PI / 180), 0, 0]}>
-      <sphereGeometry args={[1, 128, 128]} />
-      <shaderMaterial
-        vertexShader={vertexShader}
-        fragmentShader={fragmentShader}
-      />
-    </mesh>
+    <group rotation={[80 * (Math.PI / 180), 0, 0]}>
+      {/* Subtle axis line */}
+      <line>
+        <bufferGeometry>
+          <bufferAttribute
+            attach="attributes-position"
+            count={2}
+            array={new Float32Array([0, -1.8, 0, 0, 1.8, 0])}
+            itemSize={3}
+          />
+        </bufferGeometry>
+        <lineBasicMaterial color="#d1d5db" opacity={0.4} transparent />
+      </line>
+      <mesh ref={meshRef} scale={1.265}>
+        <sphereGeometry args={[1, 128, 128]} />
+        <shaderMaterial
+          vertexShader={vertexShader}
+          fragmentShader={fragmentShader}
+        />
+      </mesh>
+    </group>
   );
 };
 
