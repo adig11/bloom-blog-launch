@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { ArticleCard } from "@/components/ArticleCard";
 import { NewsletterForm } from "@/components/NewsletterForm";
 import { GraphOfTheWeekChart } from "@/components/GraphOfTheWeekChart";
+import { MorphingShape } from "@/components/animations/MorphingShape";
 import { getFeaturedArticle, getLatestArticles, getArticlesForSeries } from "@/lib/articles";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -17,25 +18,29 @@ const Index = () => {
     <Layout>
       {/* Hero */}
       <section className="border-b border-border relative overflow-hidden">
-        {/* Floating decorative elements */}
-        <FloatingElement className="absolute top-20 right-[15%] w-2 h-2 rounded-full bg-primary/20" delay={0}><span /></FloatingElement>
-        <FloatingElement className="absolute top-40 right-[25%] w-1.5 h-1.5 rounded-full bg-primary/30" delay={1}><span /></FloatingElement>
-        <FloatingElement className="absolute bottom-20 right-[10%] w-3 h-3 rounded-full bg-primary/10" delay={2}><span /></FloatingElement>
+        {/* Floating decorative dots */}
+        <FloatingElement className="absolute top-16 right-[45%] w-1.5 h-1.5 rounded-full bg-primary/20" delay={0}><span /></FloatingElement>
+        <FloatingElement className="absolute top-32 right-[55%] w-1 h-1 rounded-full bg-primary/30" delay={1}><span /></FloatingElement>
         
-        <div className="container py-12 md:py-16">
-          <div className="max-w-3xl">
-            <p className="text-sm font-medium uppercase tracking-wider text-primary mb-3 opacity-0 animate-fade-up">
-              Essays on building
-            </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-text-headline leading-[1.1] mb-4 opacity-0 animate-fade-up animation-delay-100">
-              Thoughts on building,{" "}
-              <span className="text-primary">for India</span>.
-            </h1>
-            <p className="text-lg text-text-body max-w-2xl mb-6 opacity-0 animate-fade-up animation-delay-200">
-              A personal lens on startups, systems, markets, and ideas. High signal. No fluff.
-            </p>
-            <div className="opacity-0 animate-fade-up animation-delay-300">
-              <NewsletterForm variant="hero" />
+        <div className="container py-8 md:py-10">
+          <div className="grid lg:grid-cols-2 gap-6 items-center">
+            <div className="max-w-xl">
+              <p className="text-sm font-medium uppercase tracking-wider text-primary mb-2 opacity-0 animate-fade-up">
+                Essays on building
+              </p>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-text-headline leading-[1.1] mb-3 opacity-0 animate-fade-up animation-delay-100">
+                Thoughts on building,{" "}
+                <span className="text-primary">for India</span>.
+              </h1>
+              <p className="text-base md:text-lg text-text-body max-w-2xl mb-5 opacity-0 animate-fade-up animation-delay-200">
+                A personal lens on startups, systems, markets, and ideas. High signal. No fluff.
+              </p>
+              <div className="opacity-0 animate-fade-up animation-delay-300">
+                <NewsletterForm variant="hero" />
+              </div>
+            </div>
+            <div className="hidden lg:block">
+              <MorphingShape />
             </div>
           </div>
         </div>
