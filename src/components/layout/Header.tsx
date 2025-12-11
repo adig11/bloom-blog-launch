@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { useState, useEffect } from "react";
 
 const navItems = [
   { href: "/", label: "Home", external: false },
@@ -8,18 +9,63 @@ const navItems = [
   { href: "https://adig-portfolio.netlify.app/", label: "About", external: true },
 ];
 
+const AnimatedLogo = () => {
+  const [isCollapsed, setIsCollapsed] = useState(false);
+
+  useEffect(() => {
+    // Toggle every 4 seconds
+    const interval = setInterval(() => {
+      setIsCollapsed(prev => !prev);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <Link 
+      to="/" 
+      className="font-poppins text-xl font-bold tracking-tight text-text-headline transition-colors hover:text-primary relative overflow-hidden"
+    >
+      <span className="relative inline-block">
+        <span 
+          className={cn(
+            "inline-block transition-all duration-700 ease-in-out",
+            isCollapsed ? "max-w-0 opacity-0" : "max-w-[200px] opacity-100"
+          )}
+          style={{ overflow: 'hidden', whiteSpace: 'nowrap' }}
+        >
+          thepaper
+        </span>
+        <span 
+          className={cn(
+            "inline-block transition-all duration-700 ease-in-out",
+            isCollapsed ? "max-w-0 opacity-0" : "max-w-[80px] opacity-100"
+          )}
+          style={{ overflow: 'hidden', whiteSpace: 'nowrap' }}
+        >
+          founder
+        </span>
+        <span 
+          className={cn(
+            "inline-block transition-all duration-700 ease-in-out",
+            isCollapsed ? "max-w-[40px] opacity-100" : "max-w-0 opacity-0"
+          )}
+          style={{ overflow: 'hidden', whiteSpace: 'nowrap' }}
+        >
+          tpf
+        </span>
+        <span className="text-primary font-black text-2xl">.</span>
+      </span>
+    </Link>
+  );
+};
+
 export const Header = () => {
   const location = useLocation();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container flex h-16 items-center justify-between">
-        <Link 
-          to="/" 
-          className="font-poppins text-xl font-bold tracking-tight text-text-headline transition-colors hover:text-primary"
-        >
-          thepaperfounder
-        </Link>
+        <AnimatedLogo />
 
         <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
