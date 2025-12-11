@@ -59,7 +59,7 @@ const Sphere = ({ isHovered }: { isHovered: boolean }) => {
   });
 
   return (
-    <mesh ref={meshRef} scale={1.8}>
+    <mesh ref={meshRef} scale={1.1} rotation={[80 * (Math.PI / 180), 0, 0]}>
       <sphereGeometry args={[1, 128, 128]} />
       <shaderMaterial
         vertexShader={vertexShader}
@@ -74,7 +74,7 @@ export const GradientSphere = () => {
 
   return (
     <div 
-      className="w-[400px] h-[400px] cursor-pointer relative -mr-8"
+      className="w-[240px] h-[240px] cursor-pointer relative -mr-8"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
