@@ -2,7 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { ArticleCard } from "@/components/ArticleCard";
 import { NewsletterForm } from "@/components/NewsletterForm";
 import { GraphOfTheWeekChart } from "@/components/GraphOfTheWeekChart";
-import { MorphingShape } from "@/components/animations/MorphingShape";
+import { GradientSphere } from "@/components/animations/MorphingShape";
 import { getFeaturedArticle, getLatestArticles, getArticlesForSeries } from "@/lib/articles";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -39,8 +39,8 @@ const Index = () => {
                 <NewsletterForm variant="hero" />
               </div>
             </div>
-            <div className="hidden lg:block">
-              <MorphingShape />
+            <div className="hidden lg:flex justify-end items-center overflow-visible">
+              <GradientSphere />
             </div>
           </div>
         </div>
